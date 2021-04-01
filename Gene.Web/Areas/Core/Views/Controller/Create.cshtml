@@ -1,0 +1,49 @@
+﻿@using Gene.Middleware.Bases
+@model Gene.Middleware.ViewModels.Core.ControllerViewModel
+
+@{
+    ViewBag.Title = "Create Controller";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="Controller"
+    action="Create"
+    method="post"
+    class="container row"
+    contentClass="col s12 m8"
+    title="@ViewBag.Title"
+    subTitle="You can create a controller by using this form."
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Controller.Name"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Controller.DisplayName"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Controller.IconText"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-select model="Controller.AreaId" items="@Model.Areas" textField="Name" valueField="Id"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-enum-select model="Controller.Status" type="@typeof(Status)"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Create"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

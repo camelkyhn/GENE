@@ -1,0 +1,34 @@
+﻿@using Gene.Middleware.Bases
+@model Gene.Middleware.ViewModels.Core.ActionViewModel
+
+@{
+    ViewBag.Title = "Create Action";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="Action"
+    action="Create"
+    method="post"
+    class="container row"
+    contentClass="col s12 m8"
+    title="@ViewBag.Title"
+    subTitle="You can create an action by using this form."
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Action.Name"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-enum-select model="Action.Status" type="@typeof(Status)"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Create"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

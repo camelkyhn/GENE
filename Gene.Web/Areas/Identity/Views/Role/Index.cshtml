@@ -1,0 +1,65 @@
+﻿@using Gene.Middleware.Bases
+@model Gene.Middleware.ViewModels.Identity.RoleViewModel
+
+@{
+    ViewBag.Title = "Role Index";
+    Layout = "_Layout";
+}
+
+<gene-table
+    class="position-relative container h-100"
+    filter="@Model.Filter"
+    filterName="Filter."
+    filterAction="/Identity/Role/Index"
+    filterMethod="post"
+    dataSource="@Model.Roles"
+    columns="@Model.TableColumns"
+    tableRowActionLinks="@Model.TableRowActionLinks"
+    message="@Model.NotifyMessage">
+    <gene-row class="white-text valign-wrapper my-15">
+        <gene-column small="12" medium="6">
+            <h4 class="mt-0 mb-1">@ViewBag.Title</h4>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-row class="mb-0">
+                <gene-column small="12" medium="6" class="center mb-1">
+                    <a class="waves-effect waves-light blue darken-4 btn modal-trigger h-100 w-100" href="#filterForm">Filter</a>
+                </gene-column>
+                <gene-column small="12" medium="6" class="center mb-1">
+                    <a type="button" class="btn green darken-4 h-100 w-100" asp-area="Identity" asp-controller="Role" asp-action="Create">Create</a>
+                </gene-column>
+            </gene-row>
+        </gene-column>
+    </gene-row>
+    <gene-filter id="filterForm" filter="@Model.Filter">
+        <gene-row>
+            <gene-column small="12" medium="6">
+                <gene-text model="Filter.Name"/>
+            </gene-column>
+            <gene-column small="12" medium="6">
+                <gene-text model="Filter.UpdatedUserEmail"/>
+            </gene-column>
+        </gene-row>
+        <gene-row>
+            <gene-column small="12" medium="6">
+                <gene-date model="Filter.DateBefore"/>
+            </gene-column>
+            <gene-column small="12" medium="6">
+                <gene-date model="Filter.DateAfter"/>
+            </gene-column>
+        </gene-row>
+        <gene-row>
+            <gene-column small="12" medium="6">
+                <gene-enum-select model="Filter.Status" type="typeof(Status)"/>
+            </gene-column>
+            <gene-column small="12" medium="6">
+                <gene-select model="Filter.PageSize" textField="Text" valueField="Value" items="@Model.PageSizeSource"/>
+            </gene-column>
+        </gene-row>
+        <gene-row>
+            <gene-column small="12" medium="6">
+                <gene-checkbox model="Filter.IsAllData"/>
+            </gene-column>
+        </gene-row>
+    </gene-filter>
+</gene-table>

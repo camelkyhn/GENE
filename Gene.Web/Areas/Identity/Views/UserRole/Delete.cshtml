@@ -1,0 +1,47 @@
+﻿@model Gene.Middleware.ViewModels.Identity.UserRoleViewModel
+
+@{
+    ViewBag.Title = "Delete User Role";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Identity"
+    controller="UserRole"
+    action="Delete"
+    method="post"
+    class="container"
+    contentClass="col s12 m8"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title"
+    subTitle="Are you sure to delete this user role?">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-email model="UserRoleDetail.User.Email" disabled="true" label="User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="UserRoleDetail.Role.Name" disabled="true" label="Role"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="UserRoleDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="UserRoleDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="UserRoleDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="UserRoleDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="UserRoleDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Delete"/>
+        </gene-column>
+    </gene-row>
+    <input type="hidden" name="id" value="@Model.UserRoleDetail.Id"/>
+</gene-form>

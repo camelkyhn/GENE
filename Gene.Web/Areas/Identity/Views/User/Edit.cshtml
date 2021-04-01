@@ -1,0 +1,80 @@
+﻿@using Gene.Middleware.Bases
+@model Gene.Middleware.ViewModels.Identity.UserViewModel
+
+@{
+    ViewBag.Title = "Edit User";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Identity"
+    controller="User"
+    action="Edit"
+    method="post"
+    class="container row"
+    contentClass="col s12 m8"
+    title="@ViewBag.Title"
+    subTitle="You can edit the user by using this form."
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-email model="User.Email"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-phone model="User.PhoneNumber"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-number model="User.AccessFailedCount"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-checkbox model="User.IsEmailConfirmed"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-checkbox model="User.IsPhoneNumberConfirmed"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-checkbox model="User.IsEmailEnabled"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-checkbox model="User.IsSmsEnabled"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-checkbox model="User.IsTwoFactorEnabled"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-checkbox model="User.IsLockoutEnabled"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-date model="User.LockoutEnd"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-enum-select model="User.Status" type="@typeof(Status)"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Edit"/>
+        </gene-column>
+    </gene-row>
+    <input type="hidden" asp-for="User.Id"/>
+</gene-form>

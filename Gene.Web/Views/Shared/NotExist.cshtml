@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "404";
+    ViewBag.Subtitle = "Not Found";
+    ViewBag.NotFoundText = "The requested content is not found";
+}
+
+<gene-form class="row container"
+           contentClass="col s12 center"
+           title="@ViewBag.Title"
+           subtitle="@ViewBag.Subtitle"
+           titleClass="font-bold"
+           subtitleClass="font-bold">
+    <gene-row>
+        <img class="responsive-img dashboard-image-size" src="~/img/EmptyBox.png" alt="" />
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <h6>@ViewBag.NotFoundText</h6>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-dark">Back To Home</a>
+        </gene-column>
+    </gene-row>
+</gene-form>

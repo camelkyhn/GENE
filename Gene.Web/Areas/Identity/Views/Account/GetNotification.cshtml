@@ -1,0 +1,29 @@
+﻿@model Gene.Middleware.ViewModels.Identity.NotificationViewModel
+
+@{
+    ViewBag.Title = "Notification Detail";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Identity"
+    controller="Account"
+    action="GetNotification"
+    method="get"
+    class="container"
+    contentClass="col s12"
+    titleContentClass="center-align"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title"
+    subTitle="@Model.NotificationDetail.Title">
+    <gene-row>
+        <gene-column small="12">
+            <gene-content content="@Model.NotificationDetail.Description"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-anchor-button-group text="Delete" href="/Identity/Account/DeleteNotification/@Model.NotificationDetail.Id"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

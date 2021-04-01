@@ -1,0 +1,402 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/*
+  Imports
+*/
+@import "color.css";
+@import "display.css";
+@import "margin.css";
+@import "padding.css";
+@import "pointer.css";
+@import "position.css";
+@import "size.css";
+
+body {
+    background-color: #e0e0e0;
+}
+
+nav {
+    background-color: #25262A;
+}
+
+.sidenav {
+    background-color: #e0e0e0;
+}
+
+.page-footer {
+    background-color: #25262A;
+}
+
+.user-view {
+    background-color: #25262A;
+}
+
+.gene-badge {
+    background-color: #26a69a !important;
+    color: #ffffff !important;
+    border-radius: 1rem !important;
+}
+
+.gene-text {
+    z-index: 100;
+    position: relative;
+}
+
+.indicators .indicator-item.active {
+    background-color: #4CAF50 !important;
+}
+
+.indicator-item {
+    background-color: #455a64 !important;
+}
+
+.navbar-material .nav-wrapper .brand-logo img {
+    height: 4rem;
+}
+
+@media(max-width: 48rem) {
+    .navbar-material .nav-wrapper .brand-logo img {
+        height: 3.5rem;
+    }
+}
+
+.btn-flat {
+    color: #009688;
+    border: solid 0.05rem #009688;
+    transition: all 0.3s ease;
+}
+
+    .btn-flat:hover {
+        background-color: #009688;
+        color: #ffffff
+    }
+
+.modal {
+    width: 80% !important;
+}
+
+.modal-overlay {
+    max-height: unset !important;
+}
+
+.modal-footer {
+    padding: 1.5rem !important;
+}
+
+td .dropdown-content {
+    width: unset !important;
+    height: unset !important;
+    white-space: nowrap;
+}
+
+.small-circle-image {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    height: 3.75rem;
+    width: 3.75rem;
+}
+
+.small-constant-circle-image {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    height: 3.75rem;
+    width: 3.75rem;
+}
+
+.big-circle-image {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+}
+
+.small-square-image {
+    height: 3.75rem;
+    width: 3.75rem;
+}
+
+.small-constant-square-image {
+    height: 3.75rem;
+    width: 3.75rem;
+}
+
+.dashboard-image-size {
+    height: 20rem;
+    width: 20rem;
+}
+
+@media only screen and (max-width: 62rem) {
+    .small-circle-image {
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
+    .small-square-image {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
+    .dashboard-image-size {
+        height: 15rem;
+        width: 15rem;
+    }
+}
+
+/* Gene Filter Form */
+#gene-filter-form .vh-100 {
+    max-height: 54rem;
+}
+
+/* Article Editor Height */
+#article-editor {
+    height: 32rem;
+}
+
+/* Change Request Editor Height */
+#change-request-editor {
+    height: 25rem;
+}
+
+/* Notification Editor Height */
+#notification-editor {
+    height: 25rem;
+}
+
+/* About Page Content Editor Height */
+#about-page-content-editor {
+    height: 32rem;
+}
+
+/* Biography Editor Height */
+#biography-editor {
+    height: 25rem;
+}
+
+/* Bold is not working with Materialize */
+.ql-editor strong {
+    font-weight: bold;
+}
+
+.ql-snow {
+    background-color: #ffffff;
+}
+
+.detail-page .parallax-container {
+    height: 19rem;
+}
+
+.card-image img {
+    max-height: 8.5rem;
+}
+
+.share-buttons {
+    z-index: 997;
+}
+
+    .share-buttons div {
+        justify-items: end;
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .share-buttons a {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .share-buttons img {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .share-buttons a:hover {
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .share-buttons img:hover {
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+@media (max-width: 48rem) {
+    .share-buttons a {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .share-buttons img {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .share-buttons a:hover {
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .share-buttons img:hover {
+        transition: all .3s ease;
+        -webkit-transition: all .3s ease;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+}
+
+.comment-action-icon {
+    color: #000000;
+}
+
+    .comment-action-icon:hover {
+        color: #e57373;
+    }
+
+.reaction-image {
+    max-height: 2rem;
+    max-width: 2rem;
+}
+
+@media(max-width: 48rem) {
+    .reaction-container p {
+        font-size: 0.8rem;
+    }
+
+    .reaction-image {
+        max-height: 1.5rem;
+        max-width: 1.5rem;
+    }
+}
+
+.rotate-neg-z {
+    transition: all 0.3s ease;
+    -webkit-transform: scale(1.3) rotateZ(-360deg);
+    -ms-transform: scale(1.3) rotateZ(-360deg);
+    transform: scale(1.3) rotateZ(-360deg);
+    opacity: 0.8;
+}
+
+    .rotate-neg-z:hover {
+        -webkit-transform: scale(1.3) rotateZ(-360deg);
+        -ms-transform: scale(1.3) rotateZ(-360deg);
+        transform: scale(1.3) rotateZ(-360deg);
+        opacity: 1;
+    }
+
+.rotate-z {
+    transition: all 0.3s ease;
+    -webkit-transform: scale(0.8) rotateZ(360deg);
+    -ms-transform: scale(0.8) rotateZ(360deg);
+    transform: scale(0.8) rotateZ(360deg);
+    opacity: 0.8;
+}
+
+    .rotate-z:active {
+        -webkit-transform: scale(0.8) rotateZ(360deg);
+        -ms-transform: scale(0.8) rotateZ(360deg);
+        transform: scale(0.8) rotateZ(360deg);
+        opacity: 1;
+    }
+
+.swing:hover {
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+@-webkit-keyframes swing {
+    15% {
+        -webkit-transform: translateX(0.5rem);
+        transform: translateX(0.5rem);
+    }
+
+    30% {
+        -webkit-transform: translateX(-0.5rem);
+        transform: translateX(-0.5rem);
+    }
+
+    50% {
+        -webkit-transform: translateX(0.3rem);
+        transform: translateX(0.3rem);
+    }
+
+    65% {
+        -webkit-transform: translateX(-0.3rem);
+        transform: translateX(-0.3rem);
+    }
+
+    80% {
+        -webkit-transform: translateX(0.2rem);
+        transform: translateX(0.2rem);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes swing {
+    15% {
+        -webkit-transform: translateX(0.5rem);
+        transform: translateX(0.5rem);
+    }
+
+    30% {
+        -webkit-transform: translateX(-0.5rem);
+        transform: translateX(-0.5rem);
+    }
+
+    50% {
+        -webkit-transform: translateX(0.3rem);
+        transform: translateX(0.3rem);
+    }
+
+    65% {
+        -webkit-transform: translateX(-0.3rem);
+        transform: translateX(-0.3rem);
+    }
+
+    80% {
+        -webkit-transform: translateX(0.2rem);
+        transform: translateX(0.2rem);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-moz-document url-prefix() {
+    textarea {
+        padding-bottom: 0 !important;
+    }
+
+    @media (min-width: 62.05rem) {
+        table {
+            max-height: 37rem;
+        }
+
+        tbody {
+            height: 100%;
+        }
+
+        thead tr th {
+            vertical-align: top;
+        }
+    }
+}

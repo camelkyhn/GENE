@@ -1,0 +1,43 @@
+﻿@model Gene.Middleware.ViewModels.Core.ActionViewModel
+
+@{
+    ViewBag.Title = "Action Detail";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="Action"
+    action="Detail"
+    method="get"
+    class="container"
+    contentClass="col s12"
+    titleContentClass="center-align"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-text model="ActionDetail.Name" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ActionDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ActionDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ActionDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="ActionDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="ActionDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-anchor-button-group text="Edit" href="/Core/Action/Edit/@Model.ActionDetail.Id"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

@@ -1,0 +1,39 @@
+﻿@using Gene.Middleware.Bases
+@model Gene.Middleware.ViewModels.Identity.UserRoleViewModel
+
+@{
+    ViewBag.Title = "Create User Role";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Identity"
+    controller="UserRole"
+    action="Create"
+    method="post"
+    class="container row"
+    contentClass="col s12 m8"
+    title="@ViewBag.Title"
+    subTitle="You can create a user role by using this form."
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-select model="UserRole.UserId" items="@Model.Users" textField="Email" valueField="Id"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-select model="UserRole.RoleId" items="@Model.Roles" textField="Name" valueField="Id"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-enum-select model="UserRole.Status" type="@typeof(Status)"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Create"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

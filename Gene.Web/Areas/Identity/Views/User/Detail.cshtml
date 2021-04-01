@@ -1,0 +1,70 @@
+﻿@model Gene.Middleware.ViewModels.Identity.UserViewModel
+
+@{
+    ViewBag.Title = "User Detail";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Identity"
+    controller="User"
+    action="Detail"
+    method="get"
+    class="container"
+    contentClass="col s12"
+    titleContentClass="center-align"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-email model="UserDetail.Email" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-phone model="UserDetail.PhoneNumber" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-number model="UserDetail.AccessFailedCount" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="UserDetail.LockoutEnd" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsEmailConfirmed" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsPhoneNumberConfirmed" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsEmailEnabled" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsSmsEnabled" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsTwoFactorEnabled" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsLockoutEnabled" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="UserDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="UserDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="UserDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="UserDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="UserDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-anchor-button-group text="Edit" href="/Identity/User/Edit/@Model.UserDetail.Id"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

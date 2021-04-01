@@ -1,0 +1,44 @@
+﻿@using Gene.Middleware.Bases
+@model Gene.Middleware.ViewModels.Identity.NotificationViewModel
+
+@{
+    ViewBag.Title = "Send Global Notification";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Identity"
+    controller="Notification"
+    action="SendGlobalNotification"
+    method="post"
+    class="container row"
+    contentClass="col s12 m8"
+    title="@ViewBag.Title"
+    subTitle="You can create and send a global notification by using this form."
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Notification.Title"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-textarea model="Notification.Description"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-checkbox model="Notification.IsOpened"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-enum-select model="Notification.Status" type="@typeof(Status)"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Create"/>
+        </gene-column>
+    </gene-row>
+</gene-form>
