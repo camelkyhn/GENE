@@ -1,0 +1,44 @@
+﻿@using Gene.Middleware.Bases
+@model Gene.Middleware.ViewModels.Core.AreaViewModel
+
+@{
+    ViewBag.Title = "Create Area";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="Area"
+    action="Create"
+    method="post"
+    class="container row"
+    contentClass="col s12 m8"
+    title="@ViewBag.Title"
+    subTitle="You can create an area by using this form."
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Area.Name"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Area.DisplayName"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Area.IconText"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-enum-select model="Area.Status" type="@typeof(Status)"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Create"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

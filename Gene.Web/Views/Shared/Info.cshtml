@@ -1,0 +1,13 @@
+﻿@model InfoViewModel
+
+@{
+    ViewBag.Title = "Info";
+}
+
+<gene-container>
+    <h3>@Model.Title</h3>
+    <h4>@Model.Message</h4>
+    <gene-row>
+        <a asp-controller="Home" asp-action="Index" class="btn">Home</a>
+    </gene-row>
+</gene-container>

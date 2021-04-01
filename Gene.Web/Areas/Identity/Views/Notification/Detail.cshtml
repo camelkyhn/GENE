@@ -1,0 +1,52 @@
+﻿@model Gene.Middleware.ViewModels.Identity.NotificationViewModel
+
+@{
+    ViewBag.Title = "Notification Detail";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Identity"
+    controller="Notification"
+    action="Detail"
+    method="get"
+    class="container"
+    contentClass="col s12"
+    titleContentClass="center-align"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-text model="NotificationDetail.Title" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-textarea model="NotificationDetail.Description" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="NotificationDetail.IsOpened" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="NotificationDetail.ReceiverUser.Email" disabled="true" label="Receiver"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="NotificationDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="NotificationDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="NotificationDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="NotificationDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="NotificationDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-anchor-button-group text="Edit" href="/Identity/Notification/Edit/@Model.NotificationDetail.Id"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

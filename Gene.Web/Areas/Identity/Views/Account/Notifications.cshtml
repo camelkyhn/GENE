@@ -1,0 +1,52 @@
+﻿@model Gene.Middleware.ViewModels.Identity.NotificationViewModel
+
+@{
+    ViewBag.Title = "Notifications";
+    Layout = "_Layout";
+}
+
+<gene-table
+    class="position-relative container h-100"
+    filter="@Model.Filter"
+    filterName="Filter."
+    filterAction="/Identity/Account/Notifications"
+    filterMethod="post"
+    dataSource="@Model.Notifications"
+    columns="@Model.TableColumns"
+    tableRowActionLinks="@Model.TableRowActionLinks"
+    message="@Model.NotifyMessage">
+    <gene-row class="white-text valign-wrapper my-15">
+        <gene-column small="12" medium="6">
+            <h4 class="my-0">@ViewBag.Title</h4>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <a class="waves-effect waves-light blue darken-4 btn modal-trigger h-100 right" href="#filterForm"><i class="material-icons right">filter_list</i>Filter</a>
+        </gene-column>
+    </gene-row>
+    <gene-filter id="filterForm" filter="@Model.Filter">
+        <gene-row>
+            <gene-column small="12" medium="6">
+                <gene-text model="Filter.Title"/>
+            </gene-column>
+            <gene-column small="12" medium="6">
+                <gene-bool-select model="Filter.IsOpened"/>
+            </gene-column>
+        </gene-row>
+        <gene-row>
+            <gene-column small="12" medium="6">
+                <gene-date model="Filter.DateBefore" label="Received Before"/>
+            </gene-column>
+            <gene-column small="12" medium="6">
+                <gene-date model="Filter.DateAfter" label="Received After"/>
+            </gene-column>
+        </gene-row>
+        <gene-row>
+            <gene-column small="12" medium="6">
+                <gene-select model="Filter.PageSize" textField="Text" valueField="Value" items="@Model.PageSizeSource"/>
+            </gene-column>
+            <gene-column small="12" medium="6">
+                <gene-checkbox model="Filter.IsAllData"/>
+            </gene-column>
+        </gene-row>
+    </gene-filter>
+</gene-table>

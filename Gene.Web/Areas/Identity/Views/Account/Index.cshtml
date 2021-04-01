@@ -1,0 +1,55 @@
+﻿@model Gene.Middleware.ViewModels.Identity.ProfileViewModel
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<gene-form
+    area="Identity"
+    controller="Account"
+    action="Index"
+    method="get"
+    class="container row"
+    contentClass="col s12"
+    titleContentClass="center-align neg-mb-1"
+    title="@ViewBag.Title"
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-email model="Email" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-phone model="PhoneNumber" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="CreatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="IsEmailConfirmed" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="IsPhoneNumberConfirmed" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-input-field>
+                <gene-checkbox model="IsEmailEnabled" disabled="true"/>
+            </gene-input-field>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-input-field>
+                <gene-checkbox model="IsSmsEnabled" disabled="true"/>
+            </gene-input-field>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-anchor-button-group text="Change Password" href="/Identity/Account/ChangePassword"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

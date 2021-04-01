@@ -1,0 +1,48 @@
+﻿@model Gene.Middleware.ViewModels.Identity.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<gene-form
+    area="Identity"
+    controller="Account"
+    action="Login"
+    method="post"
+    class="container row"
+    contentClass="col s12 m8"
+    title="@ViewBag.Title"
+    subTitle="You can login to your account by using this form."
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-email model="Login.Email"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-password model="Login.Password"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-checkbox model="Login.RememberMe"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button text="Login"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <a class="grey-text darken-4" asp-area="Identity" asp-controller="Account" asp-action="ForgotPassword">Forgot password?</a>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <a class="grey-text darken-4" asp-area="Identity" asp-controller="Account" asp-action="Register">Register</a>
+        </gene-column>
+    </gene-row>
+    <input hidden type="text" name="ReturnUrl" value="@ViewBag.ReturnUrl"/>
+</gene-form>

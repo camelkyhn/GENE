@@ -1,0 +1,50 @@
+﻿@model Gene.Middleware.ViewModels.Core.ControllerActionRoleViewModel
+
+@{
+    ViewBag.Title = "Delete Controller Action";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="ControllerActionRole"
+    action="Delete"
+    method="post"
+    class="container"
+    contentClass="col s12 m8"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title"
+    subTitle="Are you sure to delete this controller action role?">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionRoleDetail.ControllerAction.Controller.Name" disabled="true" label="Controller"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionRoleDetail.ControllerAction.Action.Name" disabled="true" label="Action"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionRoleDetail.Role.Name" disabled="true" label="Role"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionRoleDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionRoleDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionRoleDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="ControllerActionRoleDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="ControllerActionRoleDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Delete"/>
+        </gene-column>
+    </gene-row>
+    <input type="hidden" name="id" value="@Model.ControllerActionRoleDetail.Id"/>
+</gene-form>

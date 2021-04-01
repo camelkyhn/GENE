@@ -1,0 +1,39 @@
+﻿@using Gene.Middleware.Bases
+@model Gene.Middleware.ViewModels.Core.ControllerActionRoleViewModel
+
+@{
+    ViewBag.Title = "Create Controller Action";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="ControllerActionRole"
+    action="Create"
+    method="post"
+    class="container row"
+    contentClass="col s12 m8"
+    title="@ViewBag.Title"
+    subTitle="You can create a controller action role by using this form."
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-select model="ControllerActionRole.ControllerActionId" items="@Model.ControllerActions" textField="Controller.Name+Action.Name" valueField="Id"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-select model="ControllerActionRole.RoleId" items="@Model.Roles" textField="Name" valueField="Id"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-enum-select model="ControllerActionRole.Status" type="@typeof(Status)"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Create"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

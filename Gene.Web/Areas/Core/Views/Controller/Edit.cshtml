@@ -1,0 +1,50 @@
+﻿@using Gene.Middleware.Bases
+@model Gene.Middleware.ViewModels.Core.ControllerViewModel
+
+@{
+    ViewBag.Title = "Edit Controller";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="Controller"
+    action="Edit"
+    method="post"
+    class="container row"
+    contentClass="col s12 m8"
+    title="@ViewBag.Title"
+    subTitle="You can edit the controller by using this form."
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Controller.Name"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Controller.DisplayName"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-text model="Controller.IconText"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-select model="Controller.AreaId" items="@Model.Areas" textField="Name" valueField="Id"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-enum-select model="Controller.Status" type="@typeof(Status)"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Edit"/>
+        </gene-column>
+    </gene-row>
+    <input type="hidden" asp-for="Controller.Id"/>
+</gene-form>

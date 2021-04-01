@@ -1,0 +1,52 @@
+﻿@model Gene.Middleware.ViewModels.Core.ControllerViewModel
+
+@{
+    ViewBag.Title = "Controller Detail";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="Controller"
+    action="Detail"
+    method="get"
+    class="container"
+    contentClass="col s12"
+    titleContentClass="center-align"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.Name" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.DisplayName" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.IconText" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.Area.Name" disabled="true" label="Area"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="ControllerDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="ControllerDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-anchor-button-group text="Edit" href="/Core/Controller/Edit/@Model.ControllerDetail.Id"/>
+        </gene-column>
+    </gene-row>
+</gene-form>

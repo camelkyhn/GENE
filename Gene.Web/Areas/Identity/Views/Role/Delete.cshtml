@@ -1,0 +1,44 @@
+﻿@model Gene.Middleware.ViewModels.Identity.RoleViewModel
+
+@{
+    ViewBag.Title = "Delete Role";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Identity"
+    controller="Role"
+    action="Delete"
+    method="post"
+    class="container"
+    contentClass="col s12 m8"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title"
+    subTitle="Are you sure to delete this role?">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-text model="RoleDetail.Name" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="RoleDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="RoleDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="RoleDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="RoleDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="RoleDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Delete"/>
+        </gene-column>
+    </gene-row>
+    <input type="hidden" name="id" value="@Model.RoleDetail.Id"/>
+</gene-form>

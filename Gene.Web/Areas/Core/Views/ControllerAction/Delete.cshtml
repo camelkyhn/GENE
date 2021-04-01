@@ -1,0 +1,47 @@
+﻿@model Gene.Middleware.ViewModels.Core.ControllerActionViewModel
+
+@{
+    ViewBag.Title = "Delete Controller Action";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="ControllerAction"
+    action="Delete"
+    method="post"
+    class="container"
+    contentClass="col s12 m8"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title"
+    subTitle="Are you sure to delete this controller action?">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionDetail.Controller.Name" disabled="true" label="Controller"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionDetail.Action.Name" disabled="true" label="Action"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerActionDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="ControllerActionDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="ControllerActionDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Delete"/>
+        </gene-column>
+    </gene-row>
+    <input type="hidden" name="id" value="@Model.ControllerActionDetail.Id"/>
+</gene-form>

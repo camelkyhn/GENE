@@ -1,0 +1,50 @@
+﻿@model Gene.Middleware.ViewModels.Core.AreaViewModel
+
+@{
+    ViewBag.Title = "Delete Area";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="Area"
+    action="Delete"
+    method="post"
+    class="container"
+    contentClass="col s12 m8"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title"
+    subTitle="Are you sure to delete this area?">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-text model="AreaDetail.Name" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="AreaDetail.DisplayName" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="AreaDetail.IconText" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="AreaDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="AreaDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="AreaDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="AreaDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="AreaDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Delete"/>
+        </gene-column>
+    </gene-row>
+    <input type="hidden" name="id" value="@Model.AreaDetail.Id"/>
+</gene-form>

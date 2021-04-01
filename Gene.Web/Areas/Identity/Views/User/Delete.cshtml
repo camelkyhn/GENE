@@ -1,0 +1,71 @@
+﻿@model Gene.Middleware.ViewModels.Identity.UserViewModel
+
+@{
+    ViewBag.Title = "Delete User";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Identity"
+    controller="User"
+    action="Delete"
+    method="post"
+    class="container"
+    contentClass="col s12 m8"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title"
+    subTitle="Are you sure to delete this user?">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-email model="UserDetail.Email" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-phone model="UserDetail.PhoneNumber" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-number model="UserDetail.AccessFailedCount" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="UserDetail.LockoutEnd" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsEmailConfirmed" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsPhoneNumberConfirmed" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsEmailEnabled" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsSmsEnabled" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsTwoFactorEnabled" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-checkbox model="UserDetail.IsLockoutEnabled" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="UserDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="UserDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="UserDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="UserDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="UserDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Delete"/>
+        </gene-column>
+    </gene-row>
+    <input type="hidden" name="id" value="@Model.UserDetail.Id"/>
+</gene-form>

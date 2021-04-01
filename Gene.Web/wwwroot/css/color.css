@@ -1,0 +1,27 @@
+/*
+    Base Color Class Names
+*/
+
+.color-disabled {
+    color: #938d8f;
+}
+
+.gene-grey {
+    background-color: #25262A;
+}
+
+.bgc-inherit {
+    background-color: inherit;
+}
+
+.bgc-white {
+    background-color: #ffffff;
+}
+
+.bgc-black {
+    background-color: #000000;
+}
+
+.bgc-disabled {
+    background-color: #938d8f;
+}

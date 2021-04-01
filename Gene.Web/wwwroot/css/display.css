@@ -1,0 +1,205 @@
+/*
+    Base Display Class Names
+*/
+
+.full-opaque {
+    opacity: 1 !important;
+}
+
+.translucent {
+    opacity: 0.5 !important;
+}
+
+.full-transparent {
+    opacity: 0 !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+/* Small */
+@media (max-width: 37.55rem) {
+    .d-none-s {
+        display: none;
+    }
+}
+
+/* Medium */
+@media (min-width: 37.55rem) and (max-width: 62.05rem) {
+    .d-none-m {
+        display: none;
+    }
+}
+
+/* Large */
+@media (min-width: 62.05rem) and (max-width: 75.05rem) {
+    .d-none-l {
+        display: none;
+    }
+}
+
+/* X-Large */
+@media (min-width: 75.05rem) {
+    .d-none-xl {
+        display: none;
+    }
+}
+
+.d-inline {
+    display: inline !important;
+}
+
+.d-inline-block {
+    display: inline-block !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-table {
+    display: table !important;
+}
+
+.d-table-cell {
+    display: table-cell !important;
+}
+
+.d-table-row {
+    display: table-row !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-inline-flex {
+    display: inline-flex !important;
+}
+
+.d-grid {
+    display: grid !important;
+}
+
+.d-inline-grid {
+    display: inline-grid !important;
+}
+
+.flex-direction-column {
+    flex-direction: column !important;
+}
+
+.flex-direction-column-reverse {
+    flex-direction: column-reverse !important;
+}
+
+.flex-direction-row {
+    flex-direction: row !important;
+}
+
+.flex-direction-row-reverse {
+    flex-direction: row-reverse !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-1-1-auto {
+    flex: 1 1 auto !important;
+}
+
+.flex-1-0-auto {
+    flex: 1 0 auto !important;
+}
+
+.flex-0-0-100 {
+    flex: 0 0 100% !important;
+}
+
+.flex-0-0-50 {
+    flex: 0 0 50% !important;
+}
+
+@media(max-width:820px) {
+    .flex-0-0-50 {
+        flex: 0 0 100% !important;
+    }
+}
+
+.flex-0-0-33 {
+    flex: 0 0 33.33% !important;
+}
+
+@media(max-width:820px) {
+    .flex-0-0-33 {
+        flex: 0 0 100% !important;
+    }
+}
+
+.grey-bordered {
+    border: solid 1px darkgrey;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.border-unset {
+    border: unset !important;
+}
+
+.border-radius-1 {
+    border-radius: 0.1rem !important;
+}
+
+.border-radius-2 {
+    border-radius: 0.2rem !important;
+}
+
+.border-radius-3 {
+    border-radius: 0.3rem !important;
+}
+
+.border-radius-4 {
+    border-radius: 0.4rem !important;
+}
+
+.border-radius-5 {
+    border-radius: 0.5rem !important;
+}
+
+.border-radius-6 {
+    border-radius: 0.6rem !important;
+}
+
+.border-radius-7 {
+    border-radius: 0.7rem !important;
+}
+
+.border-radius-8 {
+    border-radius: 0.8rem !important;
+}
+
+.border-radius-9 {
+    border-radius: 0.9rem !important;
+}
+
+.border-radius-10 {
+    border-radius: 1rem !important;
+}
+
+.no-wrap {
+    white-space: nowrap !important;
+}
+
+.decoration-none {
+    text-decoration: none;
+}
+
+.decoration-underline {
+    text-decoration: underline;
+}
+
+.no-resize {
+    resize: none;
+}

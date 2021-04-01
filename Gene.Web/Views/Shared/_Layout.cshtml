@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Gene Software</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="d-flex flex-direction-column min-vh-100 w-100">
+    <header>
+        <gene-navbar></gene-navbar>
+        <gene-menu id="slide-out" class="sidenav"></gene-menu>
+    </header>
+    <main class="flex-1-0-auto">
+        @RenderBody()
+    </main>
+    <gene-floating-button></gene-floating-button>
+    <gene-footer></gene-footer>
+    <!-- Compiled and minified Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom JS -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

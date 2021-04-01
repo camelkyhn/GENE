@@ -1,0 +1,53 @@
+﻿@model Gene.Middleware.ViewModels.Core.ControllerViewModel
+
+@{
+    ViewBag.Title = "Delete Controller";
+    Layout = "_Layout";
+}
+
+<gene-form
+    area="Core"
+    controller="Controller"
+    action="Delete"
+    method="post"
+    class="container"
+    contentClass="col s12 m8"
+    message="@Model.NotifyMessage"
+    title="@ViewBag.Title"
+    subTitle="Are you sure to delete this controller?">
+    <gene-row>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.Name" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.DisplayName" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.IconText" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.Area.Name" disabled="true" label="Area"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.Status" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.CreatedUser.Email" disabled="true" label="Created User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-text model="ControllerDetail.UpdatedUser.Email" disabled="true" label="Updated User"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="ControllerDetail.CreatedDate" disabled="true"/>
+        </gene-column>
+        <gene-column small="12" medium="6">
+            <gene-date model="ControllerDetail.UpdatedDate" disabled="true"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button-group text="Delete"/>
+        </gene-column>
+    </gene-row>
+    <input type="hidden" name="id" value="@Model.ControllerDetail.Id"/>
+</gene-form>

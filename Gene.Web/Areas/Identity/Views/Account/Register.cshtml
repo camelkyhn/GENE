@@ -1,0 +1,47 @@
+﻿@model Gene.Middleware.ViewModels.Identity.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<gene-form
+    area="Identity"
+    controller="Account"
+    action="Register"
+    method="post"
+    class="container row"
+    contentClass="col s12 m8"
+    title="@ViewBag.Title"
+    subTitle="You can create an account by using this form."
+    message="@Model.NotifyMessage">
+    <gene-row>
+        <gene-column small="12">
+            <gene-email model="Register.Email"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-phone model="Register.PhoneNumber"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-password model="Register.Password"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-password model="Register.ConfirmPassword"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <gene-submit-button text="Register"/>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <a class="grey-text darken-4" asp-area="Identity" asp-controller="Account" asp-action="Login">Login with your account</a>
+        </gene-column>
+    </gene-row>
+</gene-form>

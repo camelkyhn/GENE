@@ -1,0 +1,59 @@
+﻿@using Microsoft.AspNetCore.Hosting
+@using Microsoft.Extensions.Hosting
+@model ErrorViewModel
+@inject IWebHostEnvironment Environment
+@{
+    ViewBag.Title = "Error";
+}
+
+<gene-form class="row container"
+           contentClass="col s12"
+           title="@ViewBag.Title"
+           subtitle="An error occurred while processing your request"
+           titleClass="red-text darken-4 font-bold"
+           subtitleClass="red-text darken-4 font-bold">
+    @if (Model.ShowRequestId)
+    {
+        <gene-row class="mb-0">
+            <gene-column small="12">
+                <p><strong>Request ID:</strong> <code>@Model.RequestId</code></p>
+            </gene-column>
+        </gene-row>
+    }
+    @if (Environment.IsDevelopment())
+    {
+        @if (!string.IsNullOrEmpty(Model.ExceptionType))
+        {
+            <gene-row class="mb-0">
+                <gene-column small="12">
+                    <h5 class="font-bold">Error Type:</h5>
+                </gene-column>
+            </gene-row>
+            <gene-row class="mb-0">
+                <gene-column small="12">
+                    <p><strong>@Model.ExceptionType</strong></p>
+                </gene-column>
+            </gene-row>
+            <gene-row class="mb-0">
+                <gene-column small="12">
+                    <h5 class="font-bold">Hata Mesajı:</h5>
+                </gene-column>
+            </gene-row>
+            <gene-row class="mb-0">
+                <gene-column small="12">
+                    <p>@Model.ExceptionMessage</p>
+                </gene-column>
+            </gene-row>
+        }
+    }
+    <gene-row class="mb-0">
+        <gene-column small="12">
+            <p class="text-info">Try again, if you still get the error, please contact with the administration.</p>
+        </gene-column>
+    </gene-row>
+    <gene-row>
+        <gene-column small="12">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-dark">Back To Home</a>
+        </gene-column>
+    </gene-row>
+</gene-form>
