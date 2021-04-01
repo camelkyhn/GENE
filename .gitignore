@@ -235,7 +235,6 @@ _Pvt_Extensions
 
 # Custom ignores
 .idea
-*.json
 *.db
 *.DotSettings
 *.db-journal
