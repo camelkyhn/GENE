@@ -1,5 +1,6 @@
 using System;
 using Gene.Middleware.Constants;
+using Gene.Middleware.System;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -26,6 +27,7 @@ namespace Gene.Middleware.Extensions
                 // Redirect "/" request to "/Identity/Account/Login" route.
                 options.Conventions.AddAreaPageRoute(Areas.Identity, $"/{Controllers.Account}/{Actions.Login}", "");
             });
+            services.AddAutoMapper(typeof(MapperProfile));
         }
 
         public static void ConfigureCookiePolicyOptions(this IServiceCollection services)
