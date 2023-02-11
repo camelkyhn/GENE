@@ -1,11 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Gene.Middleware\Gene.Middleware.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220717010448_Gene_2_Entity_History.cs" />
+    <Compile Remove="Migrations\20220717010448_Gene_2_Entity_History.Designer.cs" />
   </ItemGroup>
 
 </Project>

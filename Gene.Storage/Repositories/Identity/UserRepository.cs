@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Gene.Middleware.Dtos.Identity;
 using Gene.Middleware.Exceptions;
@@ -47,16 +48,16 @@ namespace Gene.Storage.Repositories.Identity
             return user;
         }
 
-        public override async Task<Middleware.Entities.Identity.User> CreateAsync(UserDto dto)
+        public override async Task<Middleware.Entities.Identity.User> CreateAsync(UserDto dto, CancellationToken cancellationToken = default)
         {
             dto.SecurityStamp = Guid.NewGuid().ToString();
-            return await base.CreateAsync(dto);
+            return await base.CreateAsync(dto, cancellationToken);
         }
 
-        public override async Task<Middleware.Entities.Identity.User> UpdateAsync(UserDto dto)
+        public override async Task<Middleware.Entities.Identity.User> UpdateAsync(UserDto dto, CancellationToken cancellationToken = default)
         {
             dto.SecurityStamp = Guid.NewGuid().ToString();
-            return await base.UpdateAsync(dto);
+            return await base.UpdateAsync(dto, cancellationToken);
         }
 
         public async Task IncreaseFailedAttemptsAsync(Middleware.Entities.Identity.User user)

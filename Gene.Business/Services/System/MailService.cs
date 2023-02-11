@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 using Gene.Business.IServices.System;
 using Gene.Middleware.Dtos.System;
 using Gene.Middleware.System;
+using Microsoft.Extensions.Options;
 
 namespace Gene.Business.Services.System
 {
     public class MailService : IMailService
     {
+        private readonly AppConfiguration _configuration;
         private SmtpClient SmtpClient { get; }
 
-        public MailService()
+        public MailService(IOptions<AppConfiguration> configurationOptions)
         {
+            _configuration = configurationOptions.Value;
             SmtpClient = new SmtpClient
             {
-                Host = EnvironmentVariable.SmtpHost,
-                Port = EnvironmentVariable.SmtpPort,
+                Host = _configuration.SmtpHost,
+                Port = _configuration.SmtpPort,
                 EnableSsl = false,
-                Credentials = new NetworkCredential(EnvironmentVariable.SmtpUsername, EnvironmentVariable.SmtpPassword)
+                Credentials = new NetworkCredential(_configuration.SmtpUsername, _configuration.SmtpPassword)
             };
         }
 
@@ -29,12 +32,12 @@ namespace Gene.Business.Services.System
             var result = new Result<bool?>();
             try
             {
-                var message = new MailMessage(EnvironmentVariable.SmtpUsername, dto.ToEmailAddress)
+                var message = new MailMessage(_configuration.SmtpUsername, dto.ToEmailAddress)
                 {
                     Body = dto.Message,
                     Subject = dto.Subject,
                     IsBodyHtml = !dto.IsBodyPlainText,
-                    From = new MailAddress(EnvironmentVariable.SmtpUsername, "Gene Software")
+                    From = new MailAddress(_configuration.SmtpUsername, "Gene Software")
                 };
 
                 await SmtpClient.SendMailAsync(message);
@@ -58,11 +61,11 @@ namespace Gene.Business.Services.System
                 {
                     sendingTaskList.Add(new SmtpClient
                     {
-                        Host = EnvironmentVariable.SmtpHost,
-                        Port = EnvironmentVariable.SmtpPort,
+                        Host = _configuration.SmtpHost,
+                        Port = _configuration.SmtpPort,
                         EnableSsl = false,
-                        Credentials = new NetworkCredential(EnvironmentVariable.SmtpUsername, EnvironmentVariable.SmtpPassword)
-                    }.SendMailAsync(new MailMessage(EnvironmentVariable.SmtpUsername, recipient)
+                        Credentials = new NetworkCredential(_configuration.SmtpUsername, _configuration.SmtpPassword)
+                    }.SendMailAsync(new MailMessage(_configuration.SmtpUsername, recipient)
                     {
                         Body = dto.Message,
                         Subject = dto.Subject,

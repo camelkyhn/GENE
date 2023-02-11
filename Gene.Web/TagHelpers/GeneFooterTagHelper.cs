@@ -22,7 +22,7 @@ namespace Gene.Web.TagHelpers
                         "<div class='container'>" +
                             "<div class='row'>" +
                                 "<div class='col s12 m6 mb-1'style='height: 2rem;'>" +
-                                    $"&copy; {DateTime.Now.Year} - Gene Software - Designed by <a href='https://github.com/camelkyhn'>camelkyhn</a> - All rights are reserved." +
+                                    $"&copy; {DateTimeOffset.Now.Year} - Gene Software - Designed by <a href='https://github.com/camelkyhn'>camelkyhn</a> - All rights are reserved." +
                                 "</div>" +
                             "</div>" +
                         "</div>" +

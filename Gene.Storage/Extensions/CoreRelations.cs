@@ -53,6 +53,7 @@ namespace Gene.Storage.Extensions
             builder.Entity<Controller>().ToTable(nameof(Controller)).HasKey(e => e.Id);
             builder.Entity<ControllerAction>().ToTable(nameof(ControllerAction)).HasKey(e => e.Id);
             builder.Entity<ControllerActionRole>().ToTable(nameof(ControllerActionRole)).HasKey(e => e.Id);
+            builder.Entity<EntityHistoryRecord>().ToTable(nameof(EntityHistoryRecord)).HasKey(e => e.Id);
         }
     }
 }
