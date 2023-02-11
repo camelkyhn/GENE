@@ -140,7 +140,6 @@ namespace Gene.Storage
                 }
             }
 
-            // TODO: If only ignored properties changed, then don't add an entity history record
             // Save entity history record entities that have all the modifications
             foreach (var historyRecordEntry in entityHistoryRecordEntries.Where(_ => !_.HasTemporaryProperties))
             {
